@@ -14,13 +14,13 @@ void string_free_multi(size_t quantity, const String* string, ...) {
     for (size_t i = 0; i < quantity - 1; i++) {
         const String* s = va_arg(args, const String*);
 
-        free(s->data);
-        free((String*) s);
+        string_free(s);
     }
 
     va_end(args);
 }
 
+inline
 void string_free(const String* string) {
     free(string->data);
     free((String*) string);
