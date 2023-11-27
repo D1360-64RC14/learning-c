@@ -8,20 +8,21 @@ project "LearningC"
     kind "ConsoleApp"
     language "C"
     cdialect "C17"
-    targetdir "bin/%{cfg.buildcfg}"
+    targetdir "build/%{cfg.buildcfg}"
     toolset "clang"
     includedirs { "packages"}
 
     files {
         "src/**.c",
-        "packages/**.c",
-        "packages/**.h"
+        "packages/**.c"
     }
 
     filter "configurations:Debug"
         defines { "DEBUG"}
+        optimize "Off"
         symbols "On"
 
     filter "configurations:Release"
         defines { "NDEBUG"}
-        optimize "On"
+        optimize "Full"
+        symbols "Off"
