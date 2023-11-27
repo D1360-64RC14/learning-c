@@ -3,12 +3,10 @@
 
 #include <stddef.h>
 
-struct String {
+typedef struct String {
     size_t length;
     char* data;
-};
-
-typedef struct String String;
+} String;
 
 String* string_empty();
 String* string_new(const char* text, const size_t size);
