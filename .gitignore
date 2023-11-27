@@ -1,1 +1,7 @@
 build/
+bin/
+obj/
+.cache/
+compile_commands*
+*.make
+Makefile
