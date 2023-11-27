@@ -1,10 +1,10 @@
-workspace "CTechnical"
+workspace "LearningC"
     configurations {
         "Debug",
         "Release"
     }
 
-project "CTechnical"
+project "LearningC"
     kind "ConsoleApp"
     language "C"
     cdialect "C17"
