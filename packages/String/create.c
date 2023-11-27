@@ -2,9 +2,11 @@
 #include "my_string.h"
 
 // Create an empty String struct.
-// It doesn't allocate the data!
+// It doesn't allocate the 'data' field!
+inline
 String* string_empty() {
     String* string = malloc(sizeof(String));
+    string->data = NULL;
     string->length = 0;
 
     return string;
