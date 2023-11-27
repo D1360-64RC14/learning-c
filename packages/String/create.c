@@ -10,6 +10,17 @@ String* string_empty() {
     return string;
 }
 
+inline
+String* string_new_auto(const char* text) {
+    size_t size = 0;
+
+    while (text[size] != '\0') {
+        size++;
+    }
+
+    return string_new(text, size);
+}
+
 String* string_new(const char* text, const size_t size) {
     String* string = string_empty();
     string->data = malloc(sizeof(char) * (size + 1));
@@ -21,16 +32,6 @@ String* string_new(const char* text, const size_t size) {
     string->data[size] = '\0';
 
     return string;
-}
-
-String* string_new_auto(const char* text) {
-    size_t size = 0;
-
-    while (text[size] != '\0') {
-        size++;
-    }
-
-    return string_new(text, size);
 }
 
 String* string_slice(const String* string, size_t start, size_t end) {
